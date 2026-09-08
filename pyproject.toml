@@ -1,0 +1,22 @@
+[project]
+name = "deskpilot-agent"
+version = "0.1.0"
+description = "Local-first scheduled desktop AI agent with Ollama and safe allowlisted actions"
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Mario8802"}]
+
+[project.scripts]
+deskpilot = "deskpilot.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["deskpilot*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
